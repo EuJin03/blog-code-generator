@@ -1,0 +1,482 @@
+.mainSection, .featureSection, .inspirationSection {
+  padding: 60px 30px;
+  min-height: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.sectionDescription {
+  font-size: 1em;
+  line-height: 25px;
+}
+
+.mainText h1, .sectionTitle {
+  font-family: 'Raleway-Black', 'Quicksand';
+}
+
+.mainText h1 {
+  line-height: 55px;
+  padding: 0 0 10px;
+}
+
+.mainDescription {
+  line-height: 30px;
+}
+
+.mainSection {
+  padding-top: 120px;
+  position: relative;
+
+  .mainBackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: static;
+  z-index: 10;
+
+  .mainText {
+    h1, .mainDescription {
+      text-shadow: 1px 0px 5px black;
+    }
+
+    .mainDescription {
+      line-height: 35px;
+    }
+  }
+
+  .mainPic {
+    display: none;
+  }
+}
+
+.streamLineContentSection {
+  padding: 40px 30px 0;
+  text-align: center;
+
+  .imageWrapper {
+    display: flex;
+    justify-content: center;
+
+    > video {
+      height: auto;
+      width: 350px;
+      max-width: 100%;
+    }
+  }
+}
+
+.featureSection {
+  padding: 90px 30px 50px;
+}
+
+.userTypesTabs {
+  justify-content: center;
+  margin: 30px auto 20px;
+  max-width: 100%;
+
+  .tab {
+    max-width: 45%;
+
+    .sectionDescription {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    border: none;
+    border-radius: 0;
+    color: #bdbdbd;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+    position: relative;
+
+    &:after {
+      content: "";
+      height: 4px;
+      background: #C85352;
+      width: 50%;
+      position: absolute;
+      bottom: -5px;
+      left: 25%;
+      border-radius: 5px;
+      transition: all 0.3s cubic-bezier(0.17, 0.67, 0.73, 1) 0s;
+      opacity: 0;
+      transform: translateY(40%);
+    }
+    
+    &[aria-selected="true"] {
+      font-weight: bold;
+      color: #C85352 !important;
+      background-color: transparent !important;
+      
+      &:after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  .tabDivider {
+    width: 1px;
+    background: #d2d2d7;
+    margin: 0 5px;
+  }
+}
+
+.testimonialSection {
+  padding: 40px 40px 60px;
+  position: relative;
+  
+  .testimonials {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 50px;
+    padding: 10px 0 10px;
+
+    a {
+      min-width: 280px;
+      margin-right: 20px;
+    }
+
+    .testimonial {
+      border: 1px solid #d2d2d7;
+      padding: 15px 30px;
+      border-radius: 10px;
+      user-select: none;
+      display: grid;
+      grid-template-rows: 40px auto 60px;
+      text-align: left;
+      transition: all 0.3s ease;
+      color: black;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.9em;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 3px 0 10px rgb(211, 211, 211);
+      }
+
+      .quoteIcon {
+        color: #C85352;
+        font-size: 1.6em;
+      }
+
+      .profile {
+        margin: 10px 0 0;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          margin-right: 15px;
+          box-shadow: 0 0 4px #bdbdbd;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.testimonials, .samples {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.inspirationSection {
+  padding: 40px 40px 100px;
+
+  .samples {
+    margin: 30px 0 0;
+    padding: 0 0 10px;
+    display: flex;
+    flex-direction: column;
+
+    .sampleWrapper {
+      height: 100px;
+      width: 100%;
+      margin-top: 10px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      transition: all 0.3s ease;
+      
+      > div {
+        border-radius: 10px;
+      }
+      
+      .sampleImage {
+        filter: brightness(60%);
+        transition: all 0.3s ease;
+      }
+      
+      p {
+        font-size: 1.3em;
+        position: absolute;
+        color: white;
+        transition: all 0.1s ease;
+        text-shadow: 0 0px 2px black;
+        padding: 0 10px;
+        margin: 0;
+      }
+      
+      &:hover {
+        .sampleImage {
+          filter: brightness(30%);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.feature {
+  padding: 15px;
+
+  h5 {
+    font-family: 'Raleway-Black';
+    margin: 10px 0 15px;
+    color: #C85352;
+
+    span {
+      font-size: 2.2em;
+      padding-right: 5px;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0 15px;
+  }
+}
+
+.moveToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2;
+
+  .moveToTopButton {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    outline: none;
+    box-shadow: 0 0 3px gray;
+    color: #C85352;
+    font-size: 1.3em;
+  }
+}
+
+// Lazada Case Study
+.modalHeader {
+  border: none;
+  padding: 1rem 2rem;
+
+  .modalTitle {
+    font-family: 'Raleway-Black';
+    color: #C85352;
+  }
+}
+
+.modalBody {
+  padding: 0 40px 30px;
+
+  p {
+    line-height: 25px;
+
+    strong {
+      color: #c85352;
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .inspirationSection {
+    .samples {
+      .sampleWrapper {
+        height: 120px;
+      }
+
+      a {
+        width: 70%;
+      }
+
+      a:nth-child(2n) {
+        margin-left: 30%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .mainSection {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    min-height: 540px;
+    padding: 120px 8vw 60px;
+    overflow: hidden;
+
+    .mainBackground {
+      width: 130%;
+      left: -22%;
+      object-fit: cover;
+    }
+  }
+
+  .mainContent {
+    width: 65%;
+    margin: 0;
+    justify-content: flex-start;
+
+    .mainText {
+      h1 {
+        line-height: 55px;
+      }
+    }
+
+    .mainPic {
+      display: block;
+
+      video {
+        height: auto;
+        width: 240px;
+      }
+    }
+  }
+
+  .sectionDescription {
+    font-size: 1.2em;
+    line-height: 30px;
+  }
+
+  .streamLineContentSection {
+    text-align: left;
+
+    .imageWrapper > video {
+      width: 400px;
+    }
+  }
+
+  .userTypesTabs {
+    .tabDivider {
+      margin: 0 15px;
+    }
+  }
+
+  .testimonialSection {
+    text-align: center;
+
+    .testimonials {
+      .testimonial {
+        font-size: 1em;
+        padding: 25px 30px;
+      }
+    }
+  }
+
+  .inspirationSection {
+    .samples {
+      margin: 50px 0 0;
+      flex-direction: row;
+      overflow-x: scroll;
+
+      .sampleWrapper {
+        height: 300px;
+        width: 170px;
+      }
+
+      a {
+        margin-right: 20px;
+      }
+
+      a:nth-child(2n) {
+        margin-left: 0;
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .modalBody {
+    padding: 20px 40px 30px;
+  }
+
+  .mainSection {
+    padding: 120px 100px 60px;
+    min-height: 630px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .sectionTitle {
+    font-size: 2.2em;
+    margin: 0 0 20px;
+  }
+
+  .feature {
+    padding: 15px 25px;
+  }
+
+  .streamLineContentSection {
+    .imageWrapper > video {
+      width: 450px;
+    }
+
+    .content {
+      width: 85%;
+    }
+  }
+
+  .testimonialSection {
+    .testimonials {
+      a {
+        min-width: 30%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .mainSection {
+    padding: 120px 180px 60px;
+    min-height: 650px;
+
+    .mainBackground {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
